@@ -20,4 +20,8 @@ In the end, we will obtain the joint moving as below.
 
 ![output](/misc/output.gif)
 
+## Notes
+
+You might want to play with our [**yarpmotorgui**](http://www.yarp.it/yarpmotorgui.html), which lets you interact with the joint control of the robot.
+
 # [How to complete the assignment](https://github.com/vvv-school/vvv-school.github.io/blob/master/instructions/how-to-complete-assignments.md)
