@@ -32,7 +32,7 @@ The high-level user code provides a **one-shot command** in terms of **final pos
 ![position](/misc/position.png)
 
 ### :large_blue_circle: Velocity Control
-The high-level user code is responsible for **continuosly providing joint velocity** to be used to solve a given task defined upstream (e.g. reach a position). The low-level layer is only dealing with the actual control of the motor, **integrating instantly the received velocity** into a position set-point. Therefore, part of the control **complexity is shifted to higher level**.
+The high-level user code is responsible for **continuosly providing joint velocity** to be used to solve a given task defined upstream (e.g. reach a position). The low-level layer is only dealing with the actual control of the motor, **instantly integrating the received velocity** into a position set-point. Therefore, part of the control **complexity is shifted to higher level**.
 
 ![velocity](/misc/velocity.png)
 
