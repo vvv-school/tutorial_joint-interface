@@ -37,7 +37,7 @@ The high-level user code is responsible for **continuosly providing joint veloci
 ![velocity](/misc/velocity.png)
 
 ### :large_blue_circle: Position Direct Control
-The high-level user code is responsible for **continuosly providing position references** to be used to solve a given task defined upstream. The low-level layer is only dealing with the actual control of the motor. This modality allows for doing **position planning** at higher level, since we do not need to read back the encoders to perform control upstream as in the case of velocity control. As a result, we can achieve **faster movements with the freedom to plan generic joint trajectories**.
+The high-level user code is responsible for **continuosly providing position references** to be used to solve a given task defined upstream. The low-level layer is only dealing with the actual control of the motor. This modality allows for doing **position planning** at higher level, since we do not need to read back the encoders to perform control upstream as in the case of velocity control. As a result, we can achieve **faster movements** (compared with closed-loop approach) with the freedom to **plan generic joint trajectories** (compared with profiles hard-coded in the firmware).
 
 ![position-direct](/misc/position-direct.png)
 
