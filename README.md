@@ -28,11 +28,14 @@ You might want to play with our [**yarpmotorgui**](http://www.yarp.it/yarpmotorg
 
 ## Position Control
 ![position](/misc/position.png)
+The high-level user code provides a one-shot command in terms of final position set-point to achieve along with the time required to attain it (or, equivalently, the corresponding speed). Then, the low-level control is responsible for generating a suitable trajectory (typically minimum-jerk profiles) connecting the current joint angle with the desired set-point as well as for controlling the motor to make the joint reach the target.
 
 ## Velocity Control
 ![velocity](/misc/velocity.png)
+The high-level user code is responsible for continuosly providing joint velocity to be used to solve a given task defined upstream (e.g. reach a position). The low-level layer is only dealing with the actual control of the motor, integrating instant by instant the received velocity into a position set-point. Therefore, part of the control complexity is shifted to higher level. 
 
 ## Position Direct Control
 ![position-direct](/misc/position-direct.png)
+The high-level user code is responsible for continuosly providing position references to be used to solve a given task defined upstream. The low-level layer is only dealing with the actual control of the motor.
 
 # [How to complete the assignment](https://github.com/vvv-school/vvv-school.github.io/blob/master/instructions/how-to-complete-assignments.md)
