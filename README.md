@@ -27,7 +27,7 @@ You might want to play with our [**yarpmotorgui**](http://www.yarp.it/yarpmotorg
 # Diagrams of low-level control modalities
 
 ### :large_blue_circle: Position Control
-The high-level user code provides a **one-shot command** in terms of **final position set-point** to achieve along with the **time required** to attain it (or, equivalently, the corresponding speed). Then, the low-level control is responsible for generating a suitable trajectory (typically **minimum-jerk** profiles) connecting the current joint angle with the desired set-point as well as for controlling the motor to let the joint reach for the target. Thus, the **control takes place exclusively at the low-level**, whereas the high-level only sends the command to initiate the movement.
+The high-level user code provides a **one-shot command** in terms of **final position set-point** to achieve along with the **time required** to attain it (or, equivalently, the corresponding speed). Then, the low-level control is responsible for generating a suitable hard-coded trajectory (typically **minimum-jerk** profiles) connecting the current joint angle with the desired set-point as well as for controlling the motor to let the joint reach for the target. Thus, the **control takes place exclusively at the low-level**, whereas the high-level only sends the command to initiate the movement.
 
 ![position](/misc/position.png)
 
