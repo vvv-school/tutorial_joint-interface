@@ -27,12 +27,12 @@ You might want to play with our [**yarpmotorgui**](http://www.yarp.it/yarpmotorg
 # Diagrams of low-level control modalities
 
 ## Position Control
-![position](/misc/position.gif)
+![position](/misc/position.png)
 
 ## Velocity Control
-![velocity](/misc/velocity.gif)
+![velocity](/misc/velocity.png)
 
 ## Position Direct Control
-![position-direct](/misc/position-direct.gif)
+![position-direct](/misc/position-direct.png)
 
 # [How to complete the assignment](https://github.com/vvv-school/vvv-school.github.io/blob/master/instructions/how-to-complete-assignments.md)
