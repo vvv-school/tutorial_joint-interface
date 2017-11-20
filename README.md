@@ -20,6 +20,23 @@ In the end, we will obtain the joint moving as below.
 
 ![output](/misc/output.gif)
 
+## How to operate the tutorial
+
+The three modules open up the following three RPC ports:
+- `/position`
+- `/velocity`
+- `/positiondirect`
+
+Each RPC provides the following services:
+- `go` to initiate the movement.
+- `enc` to read the encoder feedback.
+
+Use case:
+```sh
+$ yarp rpc /position
+>> go
+```
+
 ## Notes
 
 You might want to play with our [**yarpmotorgui**](http://www.yarp.it/yarpmotorgui.html), which lets you interact with the joint control of the robot.
