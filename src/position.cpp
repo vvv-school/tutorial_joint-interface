@@ -4,6 +4,7 @@
 //
 // Author: Ugo Pattacini - <ugo.pattacini@iit.it>
 
+#include <cstdlib>
 #include <cmath>
 
 #include <yarp/os/Network.h>
@@ -13,11 +14,8 @@
 #include <yarp/os/Time.h>
 
 #include <yarp/dev/Drivers.h>
-#include <yarp/dev/IControlLimits2.h>
-#include <yarp/dev/IEncoders.h>
-#include <yarp/dev/IControlMode.h>
-#include <yarp/dev/IPositionControl2.h>
 #include <yarp/dev/PolyDriver.h>
+#include <yarp/dev/ControlBoardInterfaces.h>
 
 using namespace yarp::os;
 using namespace yarp::dev;
@@ -26,11 +24,11 @@ using namespace yarp::dev;
 class CtrlModule: public RFModule
 {
 protected:
-    PolyDriver         clienJoint;
-    IControlLimits2   *ilim;
-    IEncoders         *ienc;
-    IControlMode2     *imod;
-    IPositionControl2 *ipos;
+    PolyDriver        clienJoint;
+    IControlLimits   *ilim;
+    IEncoders        *ienc;
+    IControlMode     *imod;
+    IPositionControl *ipos;
 
     RpcServer rpc;
     int joint;
@@ -169,7 +167,7 @@ int main(int argc, char *argv[])
     if (!yarp.checkNetwork())
     {
         yError()<<"YARP doesn't seem to be available";
-        return 1;
+        return EXIT_FAILURE;
     }
 
     ResourceFinder rf;
