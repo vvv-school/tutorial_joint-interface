@@ -18,21 +18,21 @@ include(ICUBcontribOptions)
 # specify to install in $ICUBcontrib_DIR/bin
 icubcontrib_set_default_prefix()
 
-# import math symbols from standard cmath
-add_definitions(-D_USE_MATH_DEFINES)
-
 # position
 add_executable(${PROJECT_NAME}-position ${CMAKE_SOURCE_DIR}/src/position.cpp)
+target_compile_definitions(${PROJECT_NAME}-position PRIVATE _USE_MATH_DEFINES)
 target_link_libraries(${PROJECT_NAME}-position ${YARP_LIBRARIES})
 install(TARGETS ${PROJECT_NAME}-position DESTINATION bin)
 
 # positiondirect
 add_executable(${PROJECT_NAME}-positiondirect ${CMAKE_SOURCE_DIR}/src/positiondirect.cpp)
+target_compile_definitions(${PROJECT_NAME}-positiondirect PRIVATE _USE_MATH_DEFINES)
 target_link_libraries(${PROJECT_NAME}-positiondirect ${YARP_LIBRARIES})
 install(TARGETS ${PROJECT_NAME}-positiondirect DESTINATION bin)
 
 # velocity
 add_executable(${PROJECT_NAME}-velocity ${CMAKE_SOURCE_DIR}/src/velocity.cpp)
+target_compile_definitions(${PROJECT_NAME}-velocity PRIVATE _USE_MATH_DEFINES)
 target_link_libraries(${PROJECT_NAME}-velocity ${YARP_LIBRARIES})
 install(TARGETS ${PROJECT_NAME}-velocity DESTINATION bin)
 
