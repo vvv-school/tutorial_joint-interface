@@ -36,6 +36,7 @@ protected:
     Event done;
     int joint;
     double target;
+    bool control;
 
     void go()
     {
@@ -56,9 +57,10 @@ protected:
 
         // set control mode
         imod->setControlMode(joint,VOCAB_CM_VELOCITY);
-
+        
         // start the control
         yInfo()<<"Yielding new target: "<<target<<" [deg]";
+        control=true;
 
         // wait until we're done
         done.reset();
@@ -96,6 +98,9 @@ public:
 
         // elbow
         joint=3;
+
+        // start with control disabled
+        control=false;
 
         // target = current joint position
         ienc->getEncoder(joint,&target);
@@ -145,18 +150,24 @@ public:
 
     virtual bool updateModule()
     {
-        // retrieve current joint position
-        double enc;
-        ienc->getEncoder(joint,&enc);
+        if (control)
+        {
+            // retrieve current joint position
+            double enc;
+            ienc->getEncoder(joint,&enc);
 
-        // perform P control
-        double Kp=2.0;
-        double error=target-enc;
-        ivel->velocityMove(joint,Kp*error);
+            // perform P control
+            double Kp=2.0;
+            double error=target-enc;
+            ivel->velocityMove(joint,Kp*error);
 
-        // notify we're done
-        if (fabs(target-enc)<1.0)
-            done.signal();
+            // notify we're done
+            if (fabs(target-enc)<1.0)
+            {
+                control=false;
+                done.signal();
+            }
+        }
 
         return true;
     }
