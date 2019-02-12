@@ -165,6 +165,7 @@ public:
             if (fabs(target-enc)<1.0)
             {
                 control=false;
+                ivel->velocityMove(joint,0.0);
                 done.signal();
             }
         }
