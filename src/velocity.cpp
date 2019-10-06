@@ -5,6 +5,8 @@
 // Author: Ugo Pattacini - <ugo.pattacini@iit.it>
 
 #include <cstdlib>
+#include <mutex>
+#include <condition_variable>
 #include <cmath>
 
 #include <yarp/os/Network.h>
@@ -12,12 +14,12 @@
 #include <yarp/os/RFModule.h>
 #include <yarp/os/RpcServer.h>
 #include <yarp/os/Time.h>
-#include <yarp/os/Event.h>
 
 #include <yarp/dev/Drivers.h>
 #include <yarp/dev/PolyDriver.h>
 #include <yarp/dev/ControlBoardInterfaces.h>
 
+using namespace std;
 using namespace yarp::os;
 using namespace yarp::dev;
 
@@ -33,7 +35,9 @@ protected:
 
     RpcServer rpc;
 
-    Event done;
+	mutex mtx_done;
+	condition_variable cv_done;
+
     int joint;
     double target;
     bool control;
@@ -63,9 +67,9 @@ protected:
         control=true;
 
         // wait until we're done
-        done.reset();
-        done.wait();
-        yInfo()<<"We're done";
+		unique_lock<mutex> lck(mtx_done);
+		cv_done.wait(lck);
+		yInfo()<<"We're done";
     }
 
 public:
@@ -166,7 +170,7 @@ public:
             {
                 control=false;
                 ivel->velocityMove(joint,0.0);
-                done.signal();
+				cv_done.notify_all();
             }
         }
 
