@@ -43,6 +43,11 @@ $ yarp rpc /position
 
 You might want to play with our [**yarpmotorgui**](http://www.yarp.it/yarpmotorgui.html), which lets you interact with the joint control of the robot.
 
+To do so, type:
+```sh
+$ yarpmotorgui --robot icubSim
+```
+
 # Diagrams of low-level control modalities
 
 ### :large_blue_circle: Position Control
