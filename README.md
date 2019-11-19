@@ -6,8 +6,8 @@ Tutorial on Joint Interface
 This tutorial will guide you to the use of **Motor Interfaces** to control the
 iCub movements in the **joint space** relying on the following modalities:
 
-- [**Position Control**](http://www.yarp.it/classyarp_1_1dev_1_1IPositionControl2.html)
-- [**Velocity Control**](http://www.yarp.it/classyarp_1_1dev_1_1IVelocityControl2.html)
+- [**Position Control**](http://www.yarp.it/classyarp_1_1dev_1_1IPositionControl.html)
+- [**Velocity Control**](http://www.yarp.it/classyarp_1_1dev_1_1IVelocityControl.html)
 - [**Position-Direct Control**](http://www.yarp.it/classyarp_1_1dev_1_1IPositionDirect.html)
 
 # Tutorial
