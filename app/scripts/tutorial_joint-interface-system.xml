@@ -9,11 +9,17 @@
   </module>
 
   <module>
-      <name>iCub_SIM</name>
+      <name>gzserver</name>
+      <parameters>icub-world.sdf</parameters>
       <dependencies>
          <port timeout="20">/yarplogger</port>
       </dependencies>
       <environment>YARP_FORWARD_LOG_ENABLE=1</environment>
+      <node>localhost</node>
+  </module>
+
+  <module>
+      <name>gzclient</name>
       <node>localhost</node>
   </module>
 
