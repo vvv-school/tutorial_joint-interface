@@ -10,7 +10,7 @@
 
   <module>
       <name>gzserver</name>
-      <parameters>icub-world.sdf</parameters>
+      <parameters>tutorial_joint-interface.sdf</parameters>
       <dependencies>
          <port timeout="20">/yarplogger</port>
       </dependencies>
