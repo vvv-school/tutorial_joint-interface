@@ -8,6 +8,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <cmath>
+#include <limits>
 
 #include <yarp/os/Network.h>
 #include <yarp/os/LogStream.h>
@@ -61,6 +62,9 @@ protected:
 
         // set control mode
         imod->setControlMode(joint,VOCAB_CM_VELOCITY);
+
+        // remove any possible limitation on the acceleration
+        ivel->setRefAcceleration(joint,numeric_limits<double>::infinity());
         
         // start the control
         yInfo()<<"Yielding new target: "<<target<<" [deg]";
