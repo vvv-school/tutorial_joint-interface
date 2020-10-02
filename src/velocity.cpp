@@ -64,7 +64,7 @@ protected:
         imod->setControlMode(joint,VOCAB_CM_VELOCITY);
 
         // remove any possible limitation on the acceleration
-        ivel->setRefAcceleration(joint,numeric_limits<double>::infinity());
+        ivel->setRefAcceleration(joint,numeric_limits<double>::max());
         
         // start the control
         yInfo()<<"Yielding new target: "<<target<<" [deg]";
