@@ -1,7 +1,7 @@
 Tutorial on Joint Interface
 ===========================
 
-[![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vvv-school/tutorial_joint-interface)
+[![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer)
 
 This tutorial will guide you to the use of **Motor Interfaces** to control the
 iCub movements in the **joint space** relying on the following modalities:
