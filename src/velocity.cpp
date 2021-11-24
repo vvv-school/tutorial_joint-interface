@@ -142,7 +142,7 @@ public:
             double enc;
             ienc->getEncoder(joint,&enc);
             reply.addString("ack");
-            reply.addDouble(enc);
+            reply.addFloat64(enc);
         }
         else
             reply.addString("nack");
