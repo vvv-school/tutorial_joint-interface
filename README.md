@@ -24,6 +24,8 @@ In the end, we will obtain the joint moving as below.
 
 ## How to operate the tutorial
 
+Launch the applications available in [**`./app/scripts`**](./app/scripts) using [**yarpmanager**](http://www.yarp.it/yarpmanager.html): first the "_system_" part and then the "_app_" part.
+
 The three modules open up the following three RPC ports:
 - `/position`
 - `/velocity`
